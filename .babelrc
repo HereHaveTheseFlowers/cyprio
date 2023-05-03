@@ -1,0 +1,14 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": "> 0.25%",
+                "useBuiltIns": "entry",
+                "corejs": "3.26"
+            }
+        ],
+        ["@babel/preset-react", {"runtime": "automatic"}],
+        "@babel/preset-typescript"
+    ]
+}

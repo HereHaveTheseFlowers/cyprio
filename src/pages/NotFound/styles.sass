@@ -1,0 +1,34 @@
+.error
+    display: flex
+    flex-direction: column
+    gap: 5vh
+    align-items: center
+    width: 61vw
+    position: relative
+    margin-top: 10vh
+    @media screen and (max-width: $breakpoint-tablet)
+        margin-top: calc(19 * var(--doc-height) / 100)
+        width: 76vw
+    @media screen and (max-width: $breakpoint-phone)
+        margin-top: calc(13.5 * var(--doc-height) / 100)
+        width: 100%
+
+.error__title
+    object-fit: contain
+    width: 100%
+    -webkit-transform: translate3d(0, 0, 0)
+    fill: $color-font-active
+
+.error__description
+    font-style: normal
+    font-weight: 500
+    font-size: 24px
+    text-align: center
+    @media screen and (max-width: $breakpoint-tablet)
+        font-size: 18px
+
+.error__button
+    color: $color-font-active
+
+.error__button:hover
+    color: $color-font

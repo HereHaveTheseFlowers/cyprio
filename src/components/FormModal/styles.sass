@@ -1,0 +1,116 @@
+.modal
+    z-index: 5000
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+    pointer-events: none
+    transition: 0.4s
+
+.modal.active
+    opacity: 1
+    pointer-events: all
+
+.modal__bg
+    height: 100%
+    width: 100%
+    position: absolute
+    background-color: rgba($color-bg, 0.9)
+
+.form
+    z-index: 6000
+    width: 45.5vw
+    background: $color-font-active
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: $margin-small
+    padding: 4.5vh $gap-normal 12vh $gap-normal
+    color: $color-bg
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: 70vw
+        padding: 30px $gap-normal 68px $gap-normal
+    @media screen and (max-width: $breakpoint-phone)
+        width: 92vw
+        padding: 30px $gap-normal 51px $gap-normal
+    &__admin
+        gap: normal
+        transform: scale(0.9)
+        justify-content: space-between
+
+.form__button-close
+    background: $color-bg
+    fill: $color-font-active
+    border: 0
+    padding: 3px
+    width: 22px
+    display: block
+    position: absolute
+    top: $gap-normal
+    right: $gap-normal
+    line-height: 0
+    cursor: pointer
+    transition: 0.1s
+
+.form__button-close:hover
+    fill: $color-font
+
+.form__button-submit
+    font-style: normal
+    font-weight: 500
+    font-size: 38px
+    color: rgba($color-bg, 0.5)
+    cursor: default
+    transition: 0.1s
+    position: absolute
+    bottom: $gap-normal
+    @media screen and (max-width: $breakpoint-tablet)
+        font-size: 30px
+    @media screen and (max-width: $breakpoint-phone)
+        font-size: 28px
+
+.form__button-submit:hover
+    color: rgba($color-bg, 0.5)
+
+.form__button-submit_state_active
+    color: $color-bg
+    cursor: pointer
+
+.form__button-submit.form__button-submit_state_active:hover
+    color: $color-font
+
+.inputfield
+    width: 100%
+
+.inputfield__title
+    padding-left: $margin-petite
+    @media screen and (max-width: $breakpoint-tablet)
+        padding-left: $gap-normal
+
+.inputfield__input
+    background: $color-bg
+    border: 0
+    outline: 0
+    box-shadow: none
+    height: 32px
+    width: 100%
+    margin-top: $gap-small
+    font-family: 'CoFo Sans'
+    padding-left: 8px
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        margin-top: $margin-petite
+
+.inputfield__input::file-selector-button
+    display: none

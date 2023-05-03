@@ -1,0 +1,120 @@
+.object
+    display: flex
+    gap: $gap-normal
+    margin-top: $margin-normal
+    margin-left: calc(3.85vw * 1) // 1/26 of the screen width
+        width: auto
+        height: auto
+    margin: calc($margin-normal * 4) 0 0 0
+    @media screen and (max-width: $breakpoint-tablet)
+        margin: calc($margin-normal * 4) 0 0 0
+        width: auto
+        height: auto
+    @media screen and (max-width: $breakpoint-phone)
+        margin: calc($margin-normal * 2.5) 0 0 0
+        flex-direction: column
+        gap: $margin-normal
+    &.no-flexbox-gap
+        > *
+            margin-left: $gap-normal
+
+.object_responsive_mobile
+    width: calc(100vw - ($margin-normal * 2))
+
+.object__image
+    width: 50%
+    height: 50%
+    flex-basis: 50%
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: 50%
+        height: 50%
+        flex-basis: 50%
+    @media screen and (max-width: $breakpoint-phone)
+        width: 100%
+        height: auto
+        flex-basis: 100%
+
+.object__image_loaded
+    animation: 0.2s ease 1 fadein
+
+.object__card
+    width: calc(68vh + 20vh)
+    height: 68vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: auto
+        height: 100%
+        flex-basis: 50%
+
+.object__info
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: $margin-normal
+    padding-right: 20vh
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        padding-right: 0
+    &.no-flexbox-gap
+        > *
+            margin-bottom: $gap-normal
+
+.object__header
+    display: flex
+    flex-direction: column
+    gap: $gap-small
+    font-style: normal
+    font-weight: 500
+    font-size: 24px
+    @media screen and (max-width: $breakpoint-phone)
+        gap: $margin-petite
+    &.no-flexbox-gap
+        > *
+            margin-bottom: $gap-normal
+
+.object__name
+    color: $color-font-active
+
+.object__description 
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    white-space: pre-wrap
+    @media screen and (max-width: $breakpoint-phone)
+        font-size: 14px
+
+.object__additionalinfo
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    white-space: pre-wrap
+
+.object__links
+    display: flex
+    flex-direction: column
+    gap: $gap-small
+    background: black
+    color: white
+    padding: 5px
+    font-weight: 500
+    font-size: 18px
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: 100%
+        margin-top: calc($margin-normal * 2.5)
+        margin-bottom: calc($margin-normal * 11)
+    @media screen and (max-width: $breakpoint-phone)
+        margin-top: $margin-normal
+        margin-bottom: calc($margin-normal * 2.5)
+    &.no-flexbox-gap
+        > *
+            margin-bottom: $gap-small
+
+.object__nav-button
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+    color: $color-font-active
+
+.object__nav-button:hover
+    color: $color-font

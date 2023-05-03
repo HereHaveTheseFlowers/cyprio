@@ -1,0 +1,61 @@
+.header
+    width: 100%
+    height: 100px
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    position: relative
+    background: black
+    padding: $gap-normal
+    @media screen and (max-width: $breakpoint-phone) // phone
+        flex-direction: column
+
+.header__menu
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 10px
+    height: 100%
+    @media screen and (max-width: $breakpoint-phone) // phone
+        position: relative
+    
+.header__menu_left
+    left:  $gap-normal
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        gap: $margin-petite
+
+.header__menu_right
+    right: $gap-normal
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: 16.25vw
+        .button
+            text-align: right
+
+.header__logo
+    user-select: none
+    font-size: 62px
+    color: white
+    fill: $color-logo
+    cursor: pointer
+    @media screen and (max-width: $breakpoint-phone) // phone
+        margin-top: calc($margin-normal + $gap-normal)
+
+.header__logo_small
+    width: 30vw
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: 47vw
+    @media screen and (max-width: $breakpoint-phone) // phone
+        width: 100%
+
+.header__logo_big
+    width: 60vw
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        width: 47vw
+    @media screen and (max-width: $breakpoint-phone) // phone
+        width: 100%
+
+.header__menu-anchor
+    color: $color-font
+
+.header__menu-anchor:hover
+    color: $color-font-active

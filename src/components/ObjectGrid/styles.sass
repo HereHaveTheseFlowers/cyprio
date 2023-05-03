@@ -1,0 +1,135 @@
+.object-grid
+    margin: $margin-normal calc($margin-small - $gap-normal) 0 $margin-small
+    display: flex
+    flex-wrap: wrap
+    gap: $gap-normal
+    width: calc(88vw - 14vh) // calc(100vw - ($margin-small *2) - ($margin-normal *2))
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        margin: calc($margin-normal + $gap-normal) 0 0 0
+        width: 100%
+    @media screen and (max-width: $breakpoint-phone) // phone
+        margin: $gap-small 0 calc(var(--margin-normal) * 3.5) 0
+        gap: calc(var(--margin-normal) * 2.5)
+
+.object-card
+    flex-basis: calc(25% - $gap-normal)
+    position: relative
+    cursor: pointer
+    @media screen and (max-width: $breakpoint-tablet)
+        flex-basis: calc(33.333% - $gap-normal)
+        height: 120%
+        margin-bottom: calc(var(--margin-normal) * 3)
+    @media screen and (max-width: $breakpoint-phone)
+        flex-basis: 100%
+        margin-bottom: 0
+    &_mode_admin
+        cursor: auto
+        flex-basis: 100%
+        height: 65vh
+
+.object-card_hidden
+    display: none
+    
+.object-card__image
+    width: 100%
+    height: 100%
+    user-drag: none
+    user-select: none
+    //transition: filter 0.5s linear, opacity 0.5s linear
+    &_mode_admin
+        width: auto
+
+.object-card__image_loaded
+    animation: 0.2s ease 1 fadein
+    
+@keyframes fadein
+  0%
+    opacity: 0
+    filter: blur(10px)
+  100%
+    opacity: 1
+    filter: blur(0px)
+    
+.object-card__info
+    width: 100%
+    height: 100%
+    opacity: 0
+    position: absolute
+    background: rgba($color-bg, 0.8)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    font-style: normal
+    font-weight: 500
+    gap: 1px
+    font-size: 16px
+    line-height: 20px
+    text-align: center
+    top: 0
+    @media screen and (max-width: $breakpoint-tablet)
+        top: 0
+        position: relative
+        opacity: 1
+    &_mode_admin
+        background: $color-font-active
+        opacity: 1
+        right: 0
+        position: absolute
+        width: 50%
+    
+.object-card__info:hover
+    transition: opacity 0.1s
+    opacity: 1
+
+.object-card__info_fadeout
+    opacity: 0 !important
+
+.object-card__brand
+    font-size: 19px
+    line-height: normal
+    color: $color-font-active
+    
+.object-card__name
+    max-width: 400px
+
+.object-card__inputfield
+    padding: 0 $margin-small
+    width: 100%
+    color: $color-bg
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    display: flex
+    gap: $margin-normal
+    align-items: center
+    justify-content: space-between
+
+.object-card__input
+    background: $color-bg
+    border: 0
+    outline: 0
+    box-shadow: none
+    height: $margin-normal
+    width: 60%
+    margin-top: $gap-small
+    font-family: 'CoFo Sans'
+    padding-left: $margin-petite
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+
+.object-card__input::file-selector-button
+    display: none
+
+.object-card__button-submit
+    font-style: normal
+    font-weight: 500
+    font-size: 50px
+    color: $color-bg
+    cursor: pointer
+    transition: 0.1s
+    margin-top: $margin-small
+
+.object-card__button-submit:hover
+    color: $color-font

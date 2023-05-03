@@ -1,0 +1,43 @@
+.filters-tab
+    width: 12vw
+    padding: 20px
+    background: black
+    display: flex
+    justify-content: center
+    z-index: 4000
+    margin-top: $margin-normal
+    height: 200px
+    @media screen and (max-width: $breakpoint-tablet) // tablet
+        margin-top: calc($margin-normal + $gap-normal)
+    @media screen and (max-width: $breakpoint-phone) // phone
+        flex-direction: column
+        align-items: center
+        gap: $gap-normal
+        &.no-flexbox-gap
+            > *
+                margin-bottom: $gap-normal
+
+.filters-tab__filters
+    display: flex
+    flex-direction: column
+    gap: $gap-normal
+    &.no-flexbox-gap
+        > *
+            margin-left: $gap-normal
+
+.filters-tab__back-button
+    position: absolute
+    padding: 0
+    left: $margin-normal
+    transition: 0.1s
+    cursor: pointer
+    fill: $color-font
+    background: none
+    border: 0
+    @media screen and (max-width: $breakpoint-phone)
+        position: relative
+        margin: $margin-normal 0 0 0
+        left: 0
+
+.filters-tab__back-button:hover
+    fill: $color-font-active
